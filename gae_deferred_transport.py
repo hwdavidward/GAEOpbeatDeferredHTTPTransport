@@ -55,7 +55,7 @@ class GAEDeferredHTTPTransport(Transport):
         }
 
         try:
-            deferred.defer(self.send_request, _queue='opbeat-activity-tracking', **kwargs)
+            deferred.defer(self.send_request, **kwargs)
         except Exception as e:
             fail_callback(exception=e)
         else:
